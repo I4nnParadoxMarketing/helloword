@@ -68,7 +68,9 @@ function App() {
 
           <DayProgress completed={completed} total={todos.length} />
 
-          <TodoForm onAdd={addTodo} />
+          <div className="composer composer--inline">
+            <TodoForm onAdd={addTodo} />
+          </div>
 
           <TodoList
             todos={todos}
@@ -83,7 +85,8 @@ function App() {
               className="ghost-btn"
               onClick={() => carryFromPrevious(previousKey)}
             >
-              Bring unfinished from previous day
+              <span className="ghost-btn__full">Bring unfinished from previous day</span>
+              <span className="ghost-btn__short">Bring unfinished</span>
             </button>
             {completed > 0 && (
               <button type="button" className="ghost-btn" onClick={clearCompleted}>
@@ -93,6 +96,10 @@ function App() {
           </div>
         </section>
       </main>
+
+      <div className="composer composer--sticky">
+        <TodoForm onAdd={addTodo} id="todo-input-sticky" />
+      </div>
     </div>
   )
 }
