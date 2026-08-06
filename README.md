@@ -29,7 +29,7 @@ Install these from the Vercel Marketplace (or create accounts manually):
 
 | Service | Purpose | Env vars set |
 | --- | --- | --- |
-| [Turso](https://vercel.com/integrations/turso) | libSQL database | `LIBSQL_DATABASE_URL`, `LIBSQL_AUTH_TOKEN` |
+| [Turso](https://vercel.com/integrations/turso) | libSQL database | `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN` (or `LIBSQL_*`) |
 | [Upstash Redis](https://vercel.com/integrations/upstash) | Admin session storage | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` |
 | S3-compatible storage (R2, AWS S3, etc.) | Media uploads | `S3_*` variables (see `.env.example`) |
 

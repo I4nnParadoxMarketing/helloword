@@ -10,8 +10,10 @@ const isProduction = import.meta.env.PROD;
 
 const database = isProduction
 	? libsql({
-			url: process.env.LIBSQL_DATABASE_URL,
-			authToken: process.env.LIBSQL_AUTH_TOKEN,
+			// Turso Vercel integration sets TURSO_*; libSQL convention uses LIBSQL_*
+			url: process.env.LIBSQL_DATABASE_URL ?? process.env.TURSO_DATABASE_URL,
+			authToken:
+				process.env.LIBSQL_AUTH_TOKEN ?? process.env.TURSO_AUTH_TOKEN,
 		})
 	: sqlite({ url: "file:./data.db" });
 
